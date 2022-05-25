@@ -1,2 +1,2 @@
 #!/bin/bash
-ls [[:upper:]]*
+ls [A-Z]
