@@ -1,1 +1,2 @@
-First readme
+#!/bin/bash
+why?
