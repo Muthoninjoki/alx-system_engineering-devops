@@ -1,0 +1,2 @@
+#!/bin bash
+echo $PATH find . -type f -print | wc -l
