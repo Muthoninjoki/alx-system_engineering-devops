@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $PATH . -type f -print | wc -l
+echo $PATH | tr"wc -l"
