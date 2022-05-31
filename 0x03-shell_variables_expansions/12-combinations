@@ -1,3 +1,2 @@
 #!/bin/bash
-echo {a..n}
-echon {p..z}
+echo {a..n} {p..z}
