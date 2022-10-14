@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#stops 4-to_infinty_and_beyond witout using kill or killall
+
+pkill -f 7-highlander
