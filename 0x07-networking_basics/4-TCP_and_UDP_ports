@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#displays ports
+
+netstat -l --program
