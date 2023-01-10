@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Configure ufw so that it blocks all incoming traffic, except the following TCP ports
+# 22, 443 and 80
 
-apt-get install ufw
+sudo apt-get install ufw
 sed -i 's/IPV6=.*/IPV6=yes/' /etc/default/ufw
 ufw disable
 ufw enable
