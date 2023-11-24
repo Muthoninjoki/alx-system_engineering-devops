@@ -7,10 +7,6 @@ exit 1() {
     exit
 }
 
-trap 'echo "I hate the kill command" && exit 1' SIGTERM
-trap 'echo "Y U no love me?!"' SIGINT
-trap 'rm -f "$pid_file"; exit 0' SIGQUIT
-
 echo "$$" > "$pid_file"
 
 echo "To infinity and beyond"
@@ -18,4 +14,7 @@ while true
 do
     echo "To infinity and beyond"
     sleep 1
+    trap 'echo "I hate the kill command" && exit 1' SIGTERM
+    trap 'echo "Y U no love me?!"' SIGINT
+    trap 'exit 1' SIGQUIT
 done
