@@ -2,7 +2,7 @@
 
 pid_file="/var/run/myscript.pid"
 
-exit 1() {
+exit1() {
     rm /var/run/myscript.pid
     exit
 }
@@ -14,7 +14,7 @@ while true
 do
     echo "To infinity and beyond"
     sleep 1
-    trap 'echo "I hate the kill command" && exit 1' SIGTERM
+    trap 'echo "I hate the kill command" && exit1' SIGTERM
     trap 'echo "Y U no love me?!"' SIGINT
-    trap 'exit 1' SIGQUIT
+    trap 'exit1' SIGQUIT
 done
