@@ -10,8 +10,8 @@ exit1() {
 while true
 do
     echo "To infinity and beyond"
-    sleep 1
-    trap 'echo "I hate the kill command" && exit1' SIGTERM
+    sleep 2
     trap 'echo "Y U no love me?!"' SIGINT
+    trap 'echo "I hate the kill command" && exit1' SIGTERM
     trap 'exit1' SIGQUIT
 done
