@@ -2,7 +2,12 @@
 
 pid_file="/var/run/myscript.pid"
 
-trap 'echo "I hate the kill command"; exit 1' SIGTERM
+exit 1() {
+    rm /var/run/myscript.pid
+    exit
+}
+
+trap 'echo "I hate the kill command" && exit 1' SIGTERM
 trap 'echo "Y U no love me?!"' SIGINT
 trap 'rm -f "$pid_file"; exit 0' SIGQUIT
 
