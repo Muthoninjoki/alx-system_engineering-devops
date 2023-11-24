@@ -1,15 +1,12 @@
 #!/usr/bin/env bash
 
-pid_file="/var/run/myscript.pid"
+echo "$$" > /var/run/myscript.pid
 
 exit1() {
     rm /var/run/myscript.pid
     exit
 }
 
-echo "$$" > "$pid_file"
-
-echo "To infinity and beyond"
 while true
 do
     echo "To infinity and beyond"
