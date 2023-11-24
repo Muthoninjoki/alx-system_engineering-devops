@@ -2,16 +2,15 @@
 
 pid_file="/var/run/myscript.pid"
 
-trap 'echo "I hate the kill command"; exit 1;' SIGTERM
+trap 'echo "I hate the kill command"; exit 1' SIGTERM
+trap 'echo "Y U no love me?!"' SIGINT
+trap 'rm -f "$pid_file"; exit 0' SIGQUIT
 
-trap 'echo "Y U no love me?!";' SIGINT
-
-trap 'rm -f "$pid_file"; exit 0;' SIGQUIT
-
-echo $$ > "$pid_file"
+echo "$$" > "$pid_file"
 
 echo "To infinity and beyond"
-while true; do
+while true
+do
     echo "To infinity and beyond"
     sleep 1
 done
